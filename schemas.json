@@ -1,0 +1,33 @@
+{
+    "Monitoramento": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string"
+            },
+            "placa": {
+                "type": "string"
+            },
+            "data_inicio": {
+                "type": "string"
+            },
+            "data_termino": {
+                "type": "string"
+            }
+        }
+    },
+    "Create": {
+        "type": "object",
+        "properties": {
+            "placa": {
+                "type": "string"
+            },
+            "data_inicio": {
+                "type": "string"
+            },
+            "data_termino": {
+                "type": "string"
+            }
+        }
+    }
+}
