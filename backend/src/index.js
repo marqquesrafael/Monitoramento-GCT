@@ -4,6 +4,7 @@ const database = require('../db')
 require("dotenv").config();
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
+const cors = require('cors');
 
 const swaggerOptions = {
     swaggerDefinition: {
@@ -24,7 +25,7 @@ const swaggerOptions = {
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
-
+app.use(cors());
 app.use(express.json());
 const Monitoramento = require('../monitoramento');
 

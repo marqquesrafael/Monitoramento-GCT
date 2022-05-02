@@ -1,0 +1,20 @@
+<form>
+    <div class="mb-3">
+        <label for="placa" class="form-label">Placa:</label>
+        <input type="text" class="form-control" [(ngModel)] = "placa" name="placa">
+    </div>
+    <div class="mb-3">
+        <label for="placa" class="form-label">Data Início:</label>
+        <input type="datetime-local" [ngModel]="data_inicio | date:'yyyy-MM-ddTHH:mm'" name="data_inicio" (ngModelChange)="data_inicio = dateChanged($event)" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label for="placa" class="form-label">Data Término:</label>
+        <input type="datetime-local" class="form-control" name="data_termino" [ngModel]="data_termino | date:'yyyy-MM-ddTHH:mm'" (ngModelChange)="data_termino = dateChanged($event)" />
+    </div>
+    <button (click)="addMonitoramento()" *ngIf="monitoramento.id == 0" class="btn btn-primary">
+        cadastrar
+    </button>
+    <button (click)="updateMonitoramento()" *ngIf="monitoramento.id != 0" class="btn btn-primary">
+        Atualizar
+    </button>
+</form>
